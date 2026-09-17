@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Pocketly Verification</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0F6D5C;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Pocketly</h1>
+    <p>Opening Pocketly...</p>
+  </div>
+
+  <script>
+    const params = window.location.search;
+
+    if (params) {
+      window.location.href = `pocketly://verify-email${params}`;
+    } else {
+      document.querySelector("p").textContent =
+        "Invalid verification link.";
+    }
+  </script>
+</body>
+</html>
